@@ -15,14 +15,13 @@ webpush.setVapidDetails(
 
 // This is the same output of calling JSON.stringify on a PushSubscription
 const pushSubscription = {
-  endpoint: '.....',
+  endpoint: 'https://updates.push.services.mozilla.com/wpush/v2/gAAAAABg9…GMkmt3XYrZIF-6MVvYQkIsB3-6pr9nefIxtz6lkAA7q3JgNOMBJ4d06nk8XI',
   keys: {
-    auth: '.....',
-    p256dh: '.....'
+    auth: 'At_WRZRPhIncpsi8QtGERA',
+    p256dh: 'BMnskQHeWFDoc0J6-iDsISMPszh9aipFtKF7ehBL9MMJ8T6VvPKbqbHAW0YpQeq2v5SoMedHOuCM8n2Chx0A3u4'
   }
 };
 
-webpush.sendNotification(pushSubscription, 'Your Push Payload Text');
 
 
 
