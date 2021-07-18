@@ -3,35 +3,35 @@
 <meta charset="UTF-8">
 <title>Page Title</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="stylesheet" href="">
-<style>
-</style>
-<script src=""></script>
-<body>
 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="subscribe()">Subscribe</button>
 
-
-<div class="">
- <button onclick="subscribe()">Subscribe</button>
-
-</div>
-
-<script>
-    addEventListener('load', async () =>{
-        let sw = await navigator.serviceWorker.register('./sw.js')
-        console.log(sw)
-    })
-
-    async function subscribe() {
-        let sw = await navigator.serviceWorker.ready
+    <script>
+      async function subscribe() {
+        let sw = await navigator.serviceWorker.ready;
         let push = await sw.pushManager.subscribe({
-            userVisibleOnly: true,
-            applicationServerKey: "BJiV7ZcIJnccbe1NuWri9EzXu6qCq3Zr7PbWB"
-        })
-        console.log(JSON.stringify(push))
-    }
+          userVisibleOnly: true,
+          applicationServerKey:
+            'BD0wCYCQiH9SQ24_Ck0sUvxAsAtAAv2as4QOcpGr3bZo6PPYLwap8pp9XZNMelIBTn3ngdA3F5dNp6Ho2ePGtqY'
+        });
+        console.log(JSON.stringify(push));
+      }
 
-</script>
-
-</body>
+      if ('serviceWorker' in navigator) {
+        addEventListener('load', async () => {
+          let sw = await navigator.serviceWorker.register('./sw.js');
+          console.log(sw);
+        });
+      }
+    </script>
+  </body>
 </html>
